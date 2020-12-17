@@ -17,7 +17,7 @@ public class Router extends RouteBuilder {
         String[] query = (exchange.getIn().getBody(String.class)).split(" ");
         StringBuilder queryBody = new StringBuilder();
         String countHeader = "5";
-        // Build new body and find count header
+        // Build new body and set count header
         for (String keyword : query) {
           if (keyword.matches(regex)) { countHeader = keyword.substring(4); }
           else { queryBody.append(keyword).append(" "); }
